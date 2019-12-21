@@ -38,6 +38,15 @@ int read_from_file(void) {
 
 int main(int argc, char **argv) {
 
+	if (write_to_file()) {
+		perror("write to file\n");
+		return -1;
+	}
+
+	if (read_from_file()) {
+		perror("read error\n");
+		return -1;
+	}
 
 
 	return 0;
